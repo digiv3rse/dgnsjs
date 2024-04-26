@@ -59,7 +59,6 @@ export const makeFunctionData = <
 
   const labels = args.name.split('.')
   wrappedLabelLengthCheck(labels[0])
-
   return {
     to: getChainContractAddress({
       client: wallet,

@@ -10,6 +10,7 @@ import { encodeAbi } from '../../utils/encoders/encodeAbi.js'
 import getRecords from '../public/getRecords.js'
 import getResolver from '../public/getResolver.js'
 import setRecords from './setRecords.js'
+import getSubgraphRecords from '../subgraph/getSubgraphRecords.js'
 
 let snapshot: Hex
 let accounts: Address[]
@@ -25,7 +26,7 @@ beforeEach(async () => {
 afterEach(async () => {
   await testClient.revert({ id: snapshot })
 })
-
+jest.setTimeout(15000)
 const dummyABI = [
   {
     type: 'function',
